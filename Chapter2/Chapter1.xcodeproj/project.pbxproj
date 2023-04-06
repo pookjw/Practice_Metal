@@ -15,6 +15,8 @@
 		4F6DA6A929DE842500F1937D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6DA6A729DE842500F1937D /* LaunchScreen.storyboard */; };
 		4F6DA6AC29DE842500F1937D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DA6AB29DE842500F1937D /* main.m */; };
 		4F6DA6B329DEB44D00F1937D /* File.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DA6B229DEB44D00F1937D /* File.metal */; };
+		4F6DA6CD29DEC6B200F1937D /* train.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F6DA6CB29DEC6B200F1937D /* train.obj */; };
+		4F6DA6CE29DEC6B200F1937D /* train.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F6DA6CC29DEC6B200F1937D /* train.mtl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		4F6DA6AA29DE842500F1937D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6DA6AB29DE842500F1937D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F6DA6B229DEB44D00F1937D /* File.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = File.metal; sourceTree = "<group>"; };
+		4F6DA6CB29DEC6B200F1937D /* train.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = train.obj; sourceTree = "<group>"; };
+		4F6DA6CC29DEC6B200F1937D /* train.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = train.mtl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				4F6DA69F29DE842400F1937D /* ViewController.h */,
 				4F6DA6A029DE842400F1937D /* ViewController.m */,
 				4F6DA6B229DEB44D00F1937D /* File.metal */,
+				4F6DA6CC29DEC6B200F1937D /* train.mtl */,
+				4F6DA6CB29DEC6B200F1937D /* train.obj */,
 				4F6DA6A229DE842400F1937D /* Main.storyboard */,
 				4F6DA6A529DE842500F1937D /* Assets.xcassets */,
 				4F6DA6A729DE842500F1937D /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6DA6CD29DEC6B200F1937D /* train.obj in Resources */,
+				4F6DA6CE29DEC6B200F1937D /* train.mtl in Resources */,
 				4F6DA6A929DE842500F1937D /* LaunchScreen.storyboard in Resources */,
 				4F6DA6A629DE842500F1937D /* Assets.xcassets in Resources */,
 				4F6DA6A429DE842400F1937D /* Main.storyboard in Resources */,
