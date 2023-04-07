@@ -9,7 +9,7 @@
 using namespace metal;
 
 vertex float4 vertex_main(
-                          constant float3 *vertices [[buffer(0)]],
+                          constant packed_float3 *vertices [[buffer(0)]],
                           uint vertexID [[vertex_id]]
                           ) {
     return float4(vertices[vertexID], 1);
