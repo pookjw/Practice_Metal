@@ -87,34 +87,19 @@
     
     //
     
-    [renderEncoder setVertexBuffer:self.quad.colorBuffer offset:0 atIndex:1];
-    
-    //
-    
-    // buffer는 메모리를 전달
-    [renderEncoder setVertexBuffer:self.quad.vertexBuffer offset:0 atIndex:0];
-//    [renderEncoder setVertexBuffer:self.quad.indexBuffer offset:0 atIndex:1];
-    
     _timer += 0.05;
     float currentTime = sinf(_timer);
     [renderEncoder setVertexBytes:&currentTime length:__SIZEOF_FLOAT__ atIndex:11];
     
-//    [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
-//                      vertexStart:0
-//                      vertexCount:self.quad.verticesCount];
+    const uint count = 50;
+    [renderEncoder setVertexBytes:&count length:__SIZEOF_INT__ atIndex:0];
+    
+    [renderEncoder drawPrimitives:MTLPrimitiveTypePoint
+                      vertexStart:0
+                      vertexCount:count];
 //    [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
 //                      vertexStart:0 
 //                      vertexCount:self.quad.indicesCount];
-    
-    // self.quad.vertexBuffer의 index = 0
-    // 이는 attribute를 생성하며 그 정의는 pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultLayout;에서 한다.
-    
-    // vertices와 colors에 index 주입 
-    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypePoint
-                              indexCount:self.quad.indicesCount
-                               indexType:MTLIndexTypeUInt16
-                             indexBuffer:self.quad.indexBuffer
-                       indexBufferOffset:0];
     
     //
     

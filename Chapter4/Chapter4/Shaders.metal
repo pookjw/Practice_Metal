@@ -47,6 +47,7 @@ struct VertexIn {
 };
 struct VertexOut {
     float4 position [[position]];
+    float pointSize [[point_size]];
     float4 color;
 };
 vertex VertexOut vertex_main(
@@ -59,6 +60,7 @@ vertex VertexOut vertex_main(
     
     VertexOut out {
         .position = position,
+        .pointSize = 30,
         .color = in.color
     };
     
