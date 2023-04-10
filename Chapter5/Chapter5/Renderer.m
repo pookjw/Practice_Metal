@@ -92,6 +92,54 @@
     
     //
     
+    [renderEncoder setRenderPipelineState:self.trianglePipelineState];
+    [renderEncoder setVertexBuffer:self.triangle.vertexBuffer offset:0 atIndex:0];
+    
+    simd_float4 color = simd_make_float4(0.8f, 0.8f, 0.8f, 1.f);
+    simd_float4x4 matrix = matrix_identity_float4x4;
+    
+    [renderEncoder setFragmentBytes:&color length:sizeof(simd_float4) atIndex:0];
+    [renderEncoder setVertexBytes:&matrix length:sizeof(simd_float4x4) atIndex:11];
+    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
+                              indexCount:sizeof(self.triangle->indices) / sizeof(uint16_t)
+                               indexType:MTLIndexTypeUInt16
+                             indexBuffer:self.triangle.indexBuffer
+                       indexBufferOffset:0];
+    
+    //
+    
+    color = simd_make_float4(1.f, 0.f, 0.f, 1.f);
+    
+    simd_float4x4 translation = matrix_identity_float4x4;
+    translation.columns[3].x = 0.3f;
+    translation.columns[3].y = -0.4f;
+    translation.columns[3].z = 0.f;
+    
+    float angle = M_PI / 2.f;
+    simd_float4x4 rotationMatrix = matrix_identity_float4x4;
+    rotationMatrix.columns[0].x = cosf(angle);
+    rotationMatrix.columns[0].y = -sinf(angle);
+    rotationMatrix.columns[1].x = sinf(angle);
+    rotationMatrix.columns[1].y = cosf(angle);
+    
+    simd_float4x4 scaleMatrix = matrix_identity_float4x4;
+    scaleMatrix.columns[0].x = 1.2f;
+    scaleMatrix.columns[1].y = 0.5f;
+    
+//    matrix = matrix_multiply(translation, scaleMatrix);
+//    matrix = rotationMatrix;
+    matrix = matrix_multiply(matrix_multiply(translation, rotationMatrix), scaleMatrix);
+    
+    [renderEncoder setFragmentBytes:&color length:sizeof(simd_float4) atIndex:0];
+    [renderEncoder setVertexBytes:&matrix length:sizeof(simd_float4x4) atIndex:11];
+    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
+                              indexCount:sizeof(self.triangle->indices) / sizeof(uint16_t)
+                               indexType:MTLIndexTypeUInt16
+                             indexBuffer:self.triangle.indexBuffer
+                       indexBufferOffset:0];
+    
+    //
+    
     [renderEncoder setRenderPipelineState:self.gridPipelineState];
     [renderEncoder setVertexBuffer:self.grid.coordsBuffer offset:0 atIndex:0];
     
@@ -104,33 +152,6 @@
                                indexBufferOffset:sizeof(ushort) * i * 2];
         }
     }
-    
-    //
-    
-    [renderEncoder setRenderPipelineState:self.trianglePipelineState];
-    [renderEncoder setVertexBuffer:self.triangle.vertexBuffer offset:0 atIndex:0];
-    
-    simd_float4 color = simd_make_float4(0.8f, 0.8f, 0.8f, 1.f);
-    simd_float3 position = simd_make_float3(0.f, 0.f, 0.f);
-    
-    [renderEncoder setFragmentBytes:&color length:sizeof(simd_float4) atIndex:0];
-    [renderEncoder setVertexBytes:&position length:sizeof(simd_float3) atIndex:11];
-    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
-                              indexCount:sizeof(self.triangle->indices) / sizeof(uint16_t)
-                               indexType:MTLIndexTypeUInt16
-                             indexBuffer:self.triangle.indexBuffer
-                       indexBufferOffset:0];
-    
-    color = simd_make_float4(1.f, 0.f, 0.f, 1.f);
-    position = simd_make_float3(0.3f, -0.4f, 0.f);
-    
-    [renderEncoder setFragmentBytes:&color length:sizeof(simd_float4) atIndex:0];
-    [renderEncoder setVertexBytes:&position length:sizeof(simd_float3) atIndex:11];
-    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
-                              indexCount:sizeof(self.triangle->indices) / sizeof(uint16_t)
-                               indexType:MTLIndexTypeUInt16
-                             indexBuffer:self.triangle.indexBuffer
-                       indexBufferOffset:0];
     
     //
     
