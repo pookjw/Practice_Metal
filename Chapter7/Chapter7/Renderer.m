@@ -21,6 +21,7 @@
 @property (strong) Model *model;
 @property float timer;
 @property Uniforms uniforms;
+@property Params params;
 @end
 
 @implementation Renderer
@@ -48,6 +49,7 @@
         id<MTLRenderPipelineState> modelPipelineState = [device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:&error];
         NSAssert((error == nil), error.localizedDescription);
         
+        metalView.preferredFramesPerSecond = 120;
         metalView.clearColor = MTLClearColorMake(1.0f, 1.0f, 0.9f, 1.0f);
         metalView.delegate = self;
         metalView.device = device;
@@ -94,12 +96,16 @@
                                                                      aspect:aspect];
     
     self->_uniforms.projectionMatrix = projectionMatrix;
+    self->_params.width = (uint)size.width;
+    self->_params.height = (uint)size.height;
 }
 
 - (void)drawInMTKView:(nonnull MTKView *)view { 
     id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
     MTLRenderPassDescriptor *descriptor = view.currentRenderPassDescriptor;
     id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:descriptor];
+    
+    [renderEncoder setFragmentBytes:&(self->_params) length:sizeof(Params) atIndex:12];
     
     switch (self.options) {
         case OptionsTrain:
