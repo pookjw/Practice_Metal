@@ -7,11 +7,8 @@
 
 #include <metal_stdlib>
 #import "Common.h"
+#import "ShaderDef.h"
 using namespace metal;
-
-struct VertexOut {
-    float4 position [[position]];
-};
 
 fragment float4 fragment_main(
                               constant Params &params [[buffer(12)]],
@@ -71,9 +68,24 @@ fragment float4 fragment_main(
 //    return float4(color, 1.f);
     
 #pragma mark - Mix 2 (Red & Blue)
-    float3 red = float3(1.f, 0.f, 0.f);
-    float3 blue = float3(0.f, 0.f, 1.f);
-    float result = smoothstep(0.f, params.width, in.position.x);
-    float3 color = mix(red, blue, result);
-    return float4(color, 1.f);
+//    float3 red = float3(1.f, 0.f, 0.f);
+//    float3 blue = float3(0.f, 0.f, 1.f);
+//    float result = smoothstep(0.f, params.width, in.position.x);
+//    float3 color = mix(red, blue, result);
+//    return float4(color, 1.f);
+    
+#pragma mark - Normalize
+//    float3 color = normalize(in.position.xyz); // length(vector) = 1.0인 단일벡터로 변환
+//    return float4(color, 1);
+    
+#pragma mark - Depth - XYZ에서 빛이 투영될 때 normal이 계산되어서 들어 옴
+//    return float4(in.normal, 1.f);
+    
+#pragma mark - Depth 빛을 합성
+    float4 sky = float4(0.34f, 0.9f, 1.f, 1.f);
+    float4 earth = float4(0.29f, 0.58f, 0.2f, 1.f);
+    float intensity = in.normal.y * 0.5f + 0.5f;
+    
+    // x + (y - x) * a
+    return mix(earth, sky, intensity);
 }

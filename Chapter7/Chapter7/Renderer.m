@@ -17,6 +17,7 @@
 @property (strong) id<MTLLibrary> library;
 @property (strong) id<MTLRenderPipelineState> modelPipelineState;
 @property (strong) id<MTLRenderPipelineState> quadPipelineState;
+@property (strong) id<MTLDepthStencilState> depthStencilState;
 
 @property (strong) Model *model;
 @property float timer;
@@ -39,6 +40,7 @@
         pipelineDescriptor.vertexFunction = quadVertexFunction;
         pipelineDescriptor.fragmentFunction = fragmentFunction;
         pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat;
+        pipelineDescriptor.depthAttachmentPixelFormat = MTLPixelFormatDepth32Float;
         
         NSError * _Nullable error = nil;
         id<MTLRenderPipelineState> quadPipelineState = [device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:&error];
@@ -51,10 +53,16 @@
         
         metalView.preferredFramesPerSecond = 120;
         metalView.clearColor = MTLClearColorMake(1.0f, 1.0f, 0.9f, 1.0f);
+        metalView.depthStencilPixelFormat = MTLPixelFormatDepth32Float;
         metalView.delegate = self;
         metalView.device = device;
         
         Model *model = [[Model alloc] initWithDevice:device name:@"train.usd"];
+        
+        MTLDepthStencilDescriptor *depthStencilDescriptor = [MTLDepthStencilDescriptor new];
+        depthStencilDescriptor.depthCompareFunction = MTLCompareFunctionLess;
+        depthStencilDescriptor.depthWriteEnabled = YES;
+        id<MTLDepthStencilState> depthStencilState = [device newDepthStencilStateWithDescriptor:depthStencilDescriptor];
         
         self.device = device;
         self.commandQueue = commandQueue;
@@ -62,12 +70,14 @@
         self.quadPipelineState = quadPipelineState;
         self.modelPipelineState = modelPipelineState;
         self.model = model;
+        self.depthStencilState = depthStencilState;
     }
     
     return self;
 }
 
 - (void)renderModelWithEncoder:(id<MTLRenderCommandEncoder>)encoder {
+    [encoder setDepthStencilState:self.depthStencilState];
     [encoder setRenderPipelineState:self.modelPipelineState];
     
     self.timer += 0.005f;

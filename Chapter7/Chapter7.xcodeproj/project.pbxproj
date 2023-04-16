@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F26B8D929EBEC7000F304A8 /* ShaderDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderDef.h; sourceTree = "<group>"; };
 		4F9C23F829E8DE2F0032E3BD /* Chapter7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9C23FB29E8DE2F0032E3BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9C23FC29E8DE2F0032E3BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 				4F9C242429E8EB5D0032E3BD /* Common.h */,
 				4F9C244D29E8F5910032E3BD /* Vertex.metal */,
 				4F9C244F29E8F8590032E3BD /* Fragment.metal */,
+				4F26B8D929EBEC7000F304A8 /* ShaderDef.h */,
 				4F9C245129E8F89F0032E3BD /* train.usd */,
 			);
 			path = Chapter7;
