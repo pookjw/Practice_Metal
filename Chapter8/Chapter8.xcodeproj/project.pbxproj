@@ -20,6 +20,15 @@
 		4F0A5B8329FC28040069CCAC /* Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8229FC28040069CCAC /* Transform.m */; };
 		4F0A5B8629FC285C0069CCAC /* Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8529FC285C0069CCAC /* Mesh.m */; };
 		4F0A5B8929FC28920069CCAC /* Submesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8829FC28920069CCAC /* Submesh.m */; };
+		4F0A5B9629FFDC180069CCAC /* barn-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8C29FFDC180069CCAC /* barn-ground.png */; };
+		4F0A5B9729FFDC180069CCAC /* lowpoly-barn-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8D29FFDC180069CCAC /* lowpoly-barn-color.png */; };
+		4F0A5B9829FFDC180069CCAC /* plane.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8F29FFDC180069CCAC /* plane.obj */; };
+		4F0A5B9929FFDC180069CCAC /* plane.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9029FFDC180069CCAC /* plane.mtl */; };
+		4F0A5B9A29FFDC180069CCAC /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9129FFDC180069CCAC /* ground.png */; };
+		4F0A5B9B29FFDC180069CCAC /* lowpoly-house-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9329FFDC180069CCAC /* lowpoly-house-color.png */; };
+		4F0A5B9C29FFDC180069CCAC /* lowpoly-house.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9429FFDC180069CCAC /* lowpoly-house.obj */; };
+		4F0A5B9D29FFDC180069CCAC /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9529FFDC180069CCAC /* lowpoly-house.mtl */; };
+		4F0A5B9F29FFE0700069CCAC /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9E29FFE0700069CCAC /* Shaders.metal */; };
 		4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */; };
 		4FF74D6F29FF345600D8E749 /* MTLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +59,15 @@
 		4F0A5B8529FC285C0069CCAC /* Mesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mesh.m; sourceTree = "<group>"; };
 		4F0A5B8729FC28920069CCAC /* Submesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Submesh.h; sourceTree = "<group>"; };
 		4F0A5B8829FC28920069CCAC /* Submesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Submesh.m; sourceTree = "<group>"; };
+		4F0A5B8C29FFDC180069CCAC /* barn-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barn-ground.png"; sourceTree = "<group>"; };
+		4F0A5B8D29FFDC180069CCAC /* lowpoly-barn-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lowpoly-barn-color.png"; sourceTree = "<group>"; };
+		4F0A5B8F29FFDC180069CCAC /* plane.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane.obj; sourceTree = "<group>"; };
+		4F0A5B9029FFDC180069CCAC /* plane.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane.mtl; sourceTree = "<group>"; };
+		4F0A5B9129FFDC180069CCAC /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		4F0A5B9329FFDC180069CCAC /* lowpoly-house-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lowpoly-house-color.png"; sourceTree = "<group>"; };
+		4F0A5B9429FFDC180069CCAC /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
+		4F0A5B9529FFDC180069CCAC /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
+		4F0A5B9E29FFE0700069CCAC /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		4FF74D6A29FF344D00D8E749 /* MDLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
 		4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MDLVertexDescriptor+Category.m"; sourceTree = "<group>"; };
 		4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
@@ -114,8 +132,49 @@
 				4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */,
 				4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */,
 				4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */,
+				4F0A5B9E29FFE0700069CCAC /* Shaders.metal */,
+				4F0A5B8A29FFDC180069CCAC /* Models */,
 			);
 			path = Chapter8;
+			sourceTree = "<group>";
+		};
+		4F0A5B8A29FFDC180069CCAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A5B8B29FFDC180069CCAC /* Textures */,
+				4F0A5B8E29FFDC180069CCAC /* Ground */,
+				4F0A5B9229FFDC180069CCAC /* LowPolyHouse */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F0A5B8B29FFDC180069CCAC /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A5B8C29FFDC180069CCAC /* barn-ground.png */,
+				4F0A5B8D29FFDC180069CCAC /* lowpoly-barn-color.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		4F0A5B8E29FFDC180069CCAC /* Ground */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A5B8F29FFDC180069CCAC /* plane.obj */,
+				4F0A5B9029FFDC180069CCAC /* plane.mtl */,
+				4F0A5B9129FFDC180069CCAC /* ground.png */,
+			);
+			path = Ground;
+			sourceTree = "<group>";
+		};
+		4F0A5B9229FFDC180069CCAC /* LowPolyHouse */ = {
+			isa = PBXGroup;
+			children = (
+				4F0A5B9329FFDC180069CCAC /* lowpoly-house-color.png */,
+				4F0A5B9429FFDC180069CCAC /* lowpoly-house.obj */,
+				4F0A5B9529FFDC180069CCAC /* lowpoly-house.mtl */,
+			);
+			path = LowPolyHouse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +234,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0A5B9B29FFDC180069CCAC /* lowpoly-house-color.png in Resources */,
+				4F0A5B9729FFDC180069CCAC /* lowpoly-barn-color.png in Resources */,
 				4F0A5B6E29FC23A20069CCAC /* LaunchScreen.storyboard in Resources */,
+				4F0A5B9929FFDC180069CCAC /* plane.mtl in Resources */,
+				4F0A5B9829FFDC180069CCAC /* plane.obj in Resources */,
+				4F0A5B9A29FFDC180069CCAC /* ground.png in Resources */,
+				4F0A5B9629FFDC180069CCAC /* barn-ground.png in Resources */,
+				4F0A5B9C29FFDC180069CCAC /* lowpoly-house.obj in Resources */,
+				4F0A5B9D29FFDC180069CCAC /* lowpoly-house.mtl in Resources */,
 				4F0A5B6B29FC23A20069CCAC /* Assets.xcassets in Resources */,
 				4F0A5B6929FC23A10069CCAC /* Main.storyboard in Resources */,
 			);
@@ -190,6 +257,7 @@
 			files = (
 				4FF74D6F29FF345600D8E749 /* MTLVertexDescriptor+Category.m in Sources */,
 				4F0A5B6629FC23A10069CCAC /* ViewController.m in Sources */,
+				4F0A5B9F29FFE0700069CCAC /* Shaders.metal in Sources */,
 				4F0A5B6029FC23A10069CCAC /* AppDelegate.m in Sources */,
 				4F0A5B8329FC28040069CCAC /* Transform.m in Sources */,
 				4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */,

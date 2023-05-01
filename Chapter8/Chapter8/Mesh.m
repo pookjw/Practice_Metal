@@ -16,7 +16,7 @@
             [vertexBuffers addObject:obj.buffer];
         }];
         
-        self.vertexBuffers = vertexBuffers;
+        self->_vertexBuffers = vertexBuffers;
         
         NSMutableArray<Submesh *> *submeshes = [NSMutableArray new];
         [mdlMesh.submeshes enumerateObjectsUsingBlock:^(MDLSubmesh * _Nonnull mdlSubMesh, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -25,7 +25,7 @@
             [submeshes addObject:[[Submesh alloc] initWithMDLSubmesh:mdlSubMesh mtkSubmesh:mtkSubmesh]];
         }];
         
-        self
+        self->_submeshes = submeshes;
     }
     
     return self;
