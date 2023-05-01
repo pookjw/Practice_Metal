@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Model : NSObject <Transformable>
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name device:(id<MTLDevice>)device;
 @end
 
 NS_ASSUME_NONNULL_END

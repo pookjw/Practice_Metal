@@ -20,6 +20,8 @@
 		4F0A5B8329FC28040069CCAC /* Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8229FC28040069CCAC /* Transform.m */; };
 		4F0A5B8629FC285C0069CCAC /* Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8529FC285C0069CCAC /* Mesh.m */; };
 		4F0A5B8929FC28920069CCAC /* Submesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B8829FC28920069CCAC /* Submesh.m */; };
+		4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */; };
+		4FF74D6F29FF345600D8E749 /* MTLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,10 @@
 		4F0A5B8529FC285C0069CCAC /* Mesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mesh.m; sourceTree = "<group>"; };
 		4F0A5B8729FC28920069CCAC /* Submesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Submesh.h; sourceTree = "<group>"; };
 		4F0A5B8829FC28920069CCAC /* Submesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Submesh.m; sourceTree = "<group>"; };
+		4FF74D6A29FF344D00D8E749 /* MDLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
+		4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MDLVertexDescriptor+Category.m"; sourceTree = "<group>"; };
+		4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
+		4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MTLVertexDescriptor+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,10 @@
 				4F0A5B8529FC285C0069CCAC /* Mesh.m */,
 				4F0A5B8729FC28920069CCAC /* Submesh.h */,
 				4F0A5B8829FC28920069CCAC /* Submesh.m */,
+				4FF74D6A29FF344D00D8E749 /* MDLVertexDescriptor+Category.h */,
+				4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */,
+				4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */,
+				4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */,
 			);
 			path = Chapter8;
 			sourceTree = "<group>";
@@ -178,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF74D6F29FF345600D8E749 /* MTLVertexDescriptor+Category.m in Sources */,
 				4F0A5B6629FC23A10069CCAC /* ViewController.m in Sources */,
 				4F0A5B6029FC23A10069CCAC /* AppDelegate.m in Sources */,
 				4F0A5B8329FC28040069CCAC /* Transform.m in Sources */,
+				4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */,
 				4F0A5B8929FC28920069CCAC /* Submesh.m in Sources */,
 				4F0A5B7C29FC23DA0069CCAC /* Renderer.m in Sources */,
 				4F0A5B7129FC23A20069CCAC /* main.m in Sources */,
