@@ -30,14 +30,16 @@
         
         NSArray<MDLMesh *> *mdlMeshes = nil;
         NSArray<MTKMesh *> *mtkMeshes = [MTKMesh newMeshesFromAsset:asset device:device sourceMeshes:&mdlMeshes error:&error];
+        NSAssert((error == nil), error.localizedDescription);
         
         NSMutableArray<Mesh *> *meshes = [NSMutableArray new];
         [mtkMeshes enumerateObjectsUsingBlock:^(MTKMesh * _Nonnull mtkMesh, NSUInteger idx, BOOL * _Nonnull stop) {
-            [meshes addObject:[[Mesh alloc] initWithMDLMesh:mdlMeshes[idx] mtkMesh:mtkMesh]];
+            [meshes addObject:[[Mesh alloc] initWithMDLMesh:mdlMeshes[idx] mtkMesh:mtkMesh device:device]];
         }];
         
         self.name = name;
         self.meshes = meshes;
+        self.tiling = 1.f;
         self->_transform = [Transform new];
     }
     
@@ -46,6 +48,7 @@
 
 - (void)renderInEncoder:(id<MTLRenderCommandEncoder>)encoder uniforms:(Uniforms)uniforms params:(Params)params {
     uniforms.modelMatrix = self.transform.modelMatrix;
+    params.tiling = self.tiling;
     
     [encoder setVertexBytes:&uniforms length:sizeof(Uniforms) atIndex:UniformsBuffer];
     
@@ -57,6 +60,8 @@
         }];
         
         [mesh.submeshes enumerateObjectsUsingBlock:^(Submesh * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [encoder setFragmentTexture:obj.textures.baseColor atIndex:BaseColor];
+            
             [encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
                                 indexCount:obj.indexCount
                                  indexType:obj.indexType

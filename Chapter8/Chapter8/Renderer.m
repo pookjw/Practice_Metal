@@ -26,6 +26,7 @@
 @property (assign) Params params;
 
 @property (strong) Model *house;
+@property (strong) Model *ground;
 @end
 
 @implementation Renderer
@@ -71,6 +72,8 @@
         self.depthStencilState = depthStencilState;
         self.choice = choice;
         self.house = [[Model alloc] initWithName:@"lowpoly-house.obj" device:device];
+        self.ground = [[Model alloc] initWithName:@"plane.obj" device:device];
+        self.ground.tiling = 16.f;
         
         [self mtkView:mtkView drawableSizeWillChange:mtkView.bounds.size];
     }
@@ -105,6 +108,10 @@
     
     self.house.transform->_rotation.y = sinf(self.timer);
     [self.house renderInEncoder:renderEncoder uniforms:self.uniforms params:self.params];
+    
+    self.ground.transform.scale = 40.f;
+    self.ground.transform->_rotation.y = sinf(self.timer);
+    [self.ground renderInEncoder:renderEncoder uniforms:self.uniforms params:self.params];
     
     [renderEncoder endEncoding];
     id<MTLDrawable> drawable = view.currentDrawable;

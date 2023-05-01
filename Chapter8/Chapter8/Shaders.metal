@@ -39,11 +39,24 @@ vertex VertexOut vertex_main(
 
 fragment float4 fragment_main(
                               constant Params &params [[buffer(ParamsBuffer)]],
-                              const VertexOut in [[stage_in]]
+                              const VertexOut in [[stage_in]],
+                              const texture2d<float> baseColorTexture [[texture(BaseColor)]]
                               )
 {
-    float4 sky = float4(0.34f, 0.9f, 1.f, 1.f);
-    float4 earth = float4(0.29f, 0.58f, 0.2f, 1.f);
-    float4 intensity = in.normal.y * 0.5f + 0.5f;
-    return mix(earth, sky, intensity);
+//    float4 sky = float4(0.34f, 0.9f, 1.f, 1.f);
+//    float4 earth = float4(0.29f, 0.58f, 0.2f, 1.f);
+//    float4 intensity = in.normal.y * 0.5f + 0.5f;
+//    return mix(earth, sky, intensity);
+    
+    constexpr sampler textureSampler(
+                                     filter::linear, // Texture의 화질이 낮을 경우 smoothing 처리. 안쪽 계단현상을 없앰
+                                     address::repeat, // texture를 반복. 하단 grass
+                                     mip_filter::linear, // 멀리 보이는 texture가 왜곡되는 것을 방지. 멀리 보일 수록 해상도를 낮춰서 부드럽게 함. TextureController에서 MTKTextureLoaderOptionGenerateMipmaps를 볼 것.
+                                     max_anisotropy(8) // 끝부분 계단현상을 없앰
+                                     );
+    float3 baseColor = baseColorTexture.sample(
+                                               textureSampler,
+                                               in.uv * params.tiling // tiling = grass만 축소시킴
+                                               ).rgb;
+    return float4(baseColor, 1.f);
 }

@@ -19,7 +19,12 @@ typedef struct {
 typedef struct {
     uint width;
     uint height;
+    uint tiling;
 } Params;
+
+typedef enum {
+    BaseColor = 0
+} TextureIndices;
 
 typedef enum {
     Position = 0,

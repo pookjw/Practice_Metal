@@ -37,7 +37,7 @@
 
 + (simd_float4x4)float4x4FromFloatScale:(float)scale {
     simd_float4x4 result = matrix_identity_float4x4;
-    result.columns[3].w = scale;
+    result.columns[3].w = 1.f / scale;
     return result;
 }
 

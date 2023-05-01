@@ -9,7 +9,7 @@
 
 @implementation Mesh
 
-- (instancetype)initWithMDLMesh:(MDLMesh *)mdlMesh mtkMesh:(MTKMesh *)mtkMesh {
+- (instancetype)initWithMDLMesh:(MDLMesh *)mdlMesh mtkMesh:(MTKMesh *)mtkMesh device:(id<MTLDevice>)device {
     if (self = [self init]) {
         NSMutableArray<id<MTLBuffer>> *vertexBuffers = [NSMutableArray new];
         [mtkMesh.vertexBuffers enumerateObjectsUsingBlock:^(MTKMeshBuffer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -22,7 +22,7 @@
         [mdlMesh.submeshes enumerateObjectsUsingBlock:^(MDLSubmesh * _Nonnull mdlSubMesh, NSUInteger idx, BOOL * _Nonnull stop) {
             MTKSubmesh *mtkSubmesh = mtkMesh.submeshes[idx];
             
-            [submeshes addObject:[[Submesh alloc] initWithMDLSubmesh:mdlSubMesh mtkSubmesh:mtkSubmesh]];
+            [submeshes addObject:[[Submesh alloc] initWithMDLSubmesh:mdlSubMesh mtkSubmesh:mtkSubmesh device:device]];
         }];
         
         self->_submeshes = submeshes;

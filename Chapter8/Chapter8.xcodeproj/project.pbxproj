@@ -29,6 +29,8 @@
 		4F0A5B9C29FFDC180069CCAC /* lowpoly-house.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9429FFDC180069CCAC /* lowpoly-house.obj */; };
 		4F0A5B9D29FFDC180069CCAC /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9529FFDC180069CCAC /* lowpoly-house.mtl */; };
 		4F0A5B9F29FFE0700069CCAC /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5B9E29FFE0700069CCAC /* Shaders.metal */; };
+		4F0A5BA229FFE5450069CCAC /* TextureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A5BA129FFE5450069CCAC /* TextureController.m */; };
+		4F0A5BA52A00132F0069CCAC /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0A5BA42A00132F0069CCAC /* Textures.xcassets */; };
 		4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */; };
 		4FF74D6F29FF345600D8E749 /* MTLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,10 @@
 		4F0A5B9429FFDC180069CCAC /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
 		4F0A5B9529FFDC180069CCAC /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
 		4F0A5B9E29FFE0700069CCAC /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		4F0A5BA029FFE5450069CCAC /* TextureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureController.h; sourceTree = "<group>"; };
+		4F0A5BA129FFE5450069CCAC /* TextureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextureController.m; sourceTree = "<group>"; };
+		4F0A5BA32A000A9A0069CCAC /* Chapter8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chapter8.entitlements; sourceTree = "<group>"; };
+		4F0A5BA42A00132F0069CCAC /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
 		4FF74D6A29FF344D00D8E749 /* MDLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
 		4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MDLVertexDescriptor+Category.m"; sourceTree = "<group>"; };
 		4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTLVertexDescriptor+Category.h"; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		4F0A5B5D29FC23A10069CCAC /* Chapter8 */ = {
 			isa = PBXGroup;
 			children = (
+				4F0A5BA32A000A9A0069CCAC /* Chapter8.entitlements */,
 				4F0A5B5E29FC23A10069CCAC /* AppDelegate.h */,
 				4F0A5B5F29FC23A10069CCAC /* AppDelegate.m */,
 				4F0A5B6129FC23A10069CCAC /* SceneDelegate.h */,
@@ -112,6 +119,7 @@
 				4F0A5B6529FC23A10069CCAC /* ViewController.m */,
 				4F0A5B6729FC23A10069CCAC /* Main.storyboard */,
 				4F0A5B6A29FC23A20069CCAC /* Assets.xcassets */,
+				4F0A5BA42A00132F0069CCAC /* Textures.xcassets */,
 				4F0A5B6C29FC23A20069CCAC /* LaunchScreen.storyboard */,
 				4F0A5B6F29FC23A20069CCAC /* Info.plist */,
 				4F0A5B7029FC23A20069CCAC /* main.m */,
@@ -133,6 +141,8 @@
 				4FF74D6D29FF345600D8E749 /* MTLVertexDescriptor+Category.h */,
 				4FF74D6E29FF345600D8E749 /* MTLVertexDescriptor+Category.m */,
 				4F0A5B9E29FFE0700069CCAC /* Shaders.metal */,
+				4F0A5BA029FFE5450069CCAC /* TextureController.h */,
+				4F0A5BA129FFE5450069CCAC /* TextureController.m */,
 				4F0A5B8A29FFDC180069CCAC /* Models */,
 			);
 			path = Chapter8;
@@ -243,6 +253,7 @@
 				4F0A5B9629FFDC180069CCAC /* barn-ground.png in Resources */,
 				4F0A5B9C29FFDC180069CCAC /* lowpoly-house.obj in Resources */,
 				4F0A5B9D29FFDC180069CCAC /* lowpoly-house.mtl in Resources */,
+				4F0A5BA52A00132F0069CCAC /* Textures.xcassets in Resources */,
 				4F0A5B6B29FC23A20069CCAC /* Assets.xcassets in Resources */,
 				4F0A5B6929FC23A10069CCAC /* Main.storyboard in Resources */,
 			);
@@ -262,6 +273,7 @@
 				4F0A5B8329FC28040069CCAC /* Transform.m in Sources */,
 				4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */,
 				4F0A5B8929FC28920069CCAC /* Submesh.m in Sources */,
+				4F0A5BA229FFE5450069CCAC /* TextureController.m in Sources */,
 				4F0A5B7C29FC23DA0069CCAC /* Renderer.m in Sources */,
 				4F0A5B7129FC23A20069CCAC /* main.m in Sources */,
 				4F0A5B8629FC285C0069CCAC /* Mesh.m in Sources */,
@@ -408,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Chapter8/Chapter8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
@@ -425,6 +438,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.Chapter8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Chapter8/Chapter8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
@@ -452,6 +469,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.Chapter8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
