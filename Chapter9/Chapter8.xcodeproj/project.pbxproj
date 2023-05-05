@@ -35,7 +35,7 @@
 		4F89119B2A04F5310091C53D /* Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F89119A2A04F5310091C53D /* Movement.m */; };
 		4F89119E2A04FFBB0091C53D /* ArcballCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F89119D2A04FFBB0091C53D /* ArcballCamera.m */; };
 		4F8911A12A050E030091C53D /* OrthographicCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8911A02A050E030091C53D /* OrthographicCamera.m */; };
-		4FA57BFB2A01599C007F3808 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA57BFA2A01599C007F3808 /* GameScene.m */; };
+		4F8911A42A051B680091C53D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8911A22A051B680091C53D /* GameScene.m */; };
 		4FA57C012A015D97007F3808 /* FPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA57C002A015D97007F3808 /* FPCamera.m */; };
 		4FA57C042A016AF2007F3808 /* InputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA57C032A016AF2007F3808 /* InputController.m */; };
 		4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF74D6B29FF344D00D8E749 /* MDLVertexDescriptor+Category.m */; };
@@ -89,8 +89,8 @@
 		4F89119D2A04FFBB0091C53D /* ArcballCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcballCamera.m; sourceTree = "<group>"; };
 		4F89119F2A050E030091C53D /* OrthographicCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrthographicCamera.h; sourceTree = "<group>"; };
 		4F8911A02A050E030091C53D /* OrthographicCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrthographicCamera.m; sourceTree = "<group>"; };
-		4FA57BF92A01599C007F3808 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../../GameScene.h; sourceTree = "<group>"; };
-		4FA57BFA2A01599C007F3808 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = ../../GameScene.m; sourceTree = "<group>"; };
+		4F8911A22A051B680091C53D /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		4F8911A32A051B680091C53D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		4FA57BFC2A015D4C007F3808 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		4FA57BFF2A015D97007F3808 /* FPCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPCamera.h; sourceTree = "<group>"; };
 		4FA57C002A015D97007F3808 /* FPCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPCamera.m; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 				4F0A5B9E29FFE0700069CCAC /* Shaders.metal */,
 				4F0A5BA029FFE5450069CCAC /* TextureController.h */,
 				4F0A5BA129FFE5450069CCAC /* TextureController.m */,
-				4FA57BF92A01599C007F3808 /* GameScene.h */,
-				4FA57BFA2A01599C007F3808 /* GameScene.m */,
+				4F8911A32A051B680091C53D /* GameScene.h */,
+				4F8911A22A051B680091C53D /* GameScene.m */,
 				4FA57BFC2A015D4C007F3808 /* Camera.h */,
 				4FA57BFF2A015D97007F3808 /* FPCamera.h */,
 				4FA57C002A015D97007F3808 /* FPCamera.m */,
@@ -313,8 +313,8 @@
 				4F0A5B8329FC28040069CCAC /* Transform.m in Sources */,
 				4FA57C042A016AF2007F3808 /* InputController.m in Sources */,
 				4FF74D6C29FF344D00D8E749 /* MDLVertexDescriptor+Category.m in Sources */,
+				4F8911A42A051B680091C53D /* GameScene.m in Sources */,
 				4F0A5B8929FC28920069CCAC /* Submesh.m in Sources */,
-				4FA57BFB2A01599C007F3808 /* GameScene.m in Sources */,
 				4F0A5BA229FFE5450069CCAC /* TextureController.m in Sources */,
 				4F0A5B7C29FC23DA0069CCAC /* Renderer.m in Sources */,
 				4F8911A12A050E030091C53D /* OrthographicCamera.m in Sources */,
