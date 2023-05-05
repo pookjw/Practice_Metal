@@ -11,6 +11,7 @@
 @implementation FPCamera
 
 @synthesize transform = _transform;
+@synthesize movement = _movement;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -19,6 +20,7 @@
         self->_near = 0.1f;
         self->_far = 100.f;
         self->_transform = [Transform new];
+        self->_movement = [[Movement alloc] initWithTransform:self->_transform];
     }
     
     return self;
@@ -30,18 +32,18 @@
 
 - (simd_float4x4)viewMatrix {
     return simd_inverse(
-                        matrix_multiply(
-                                        [MathLibrary float4x4FromTranslation:self.transform.position],
-                                        [MathLibrary float4x4FromFloat3RotationYXZAngle:self.transform.rotation]
-                                        )
+                        simd_mul(
+                                 [MathLibrary float4x4FromTranslation:self.transform.position],
+                                 [MathLibrary float4x4FromFloat3RotationYXZAngle:self.transform.rotation]
+                                 )
                         );
     
-//    return simd_inverse(
-//                        matrix_multiply(
-//                                        [MathLibrary float4x4FromFloat3RotationYXZAngle:self.transform.rotation],
-//                                        [MathLibrary float4x4FromTranslation:self.transform.position]
-//                                        )
-//                        );
+    //    return simd_inverse(
+    //                        matrix_multiply(
+    //                                        [MathLibrary float4x4FromFloat3RotationYXZAngle:self.transform.rotation],
+    //                                        [MathLibrary float4x4FromTranslation:self.transform.position]
+    //                                        )
+    //                        );
 }
 
 - (void)updateWithSize:(CGSize)size {
@@ -49,7 +51,9 @@
 }
 
 - (void)updateWithDeltaTime:(float)deltaTime {
-    
+    Transform *transform = [self.movement updateInputWithDeltaTime:deltaTime];
+    self.transform->_rotation += transform.rotation;
+    self.transform->_position += transform.position;
 }
 
 @end

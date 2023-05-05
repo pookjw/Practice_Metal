@@ -20,7 +20,7 @@
 @property (strong) id<MTLRenderPipelineState> pipelineState;
 @property (strong) id<MTLDepthStencilState> depthStencilState;
 
-@property (assign) float timer;
+@property (assign) CFAbsoluteTime lastTime;
 @property (assign) RendererChoice choice;
 
 @property (assign) Uniforms uniforms;
@@ -74,6 +74,7 @@
         self.pipelineState = pipelineState;
         self.depthStencilState = depthStencilState;
         self.choice = choice;
+        self.lastTime = CFAbsoluteTimeGetCurrent();
         self.house = [[Model alloc] initWithName:@"lowpoly-house.obj" device:device];
         self.ground = [[Model alloc] initWithName:@"plane.obj" device:device];
         self.ground.tiling = 16.f;
@@ -96,12 +97,13 @@
     id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:descriptor];
     assert(renderEncoder);
     
-    self.timer += 0.005f;
-    
     [renderEncoder setDepthStencilState:self.depthStencilState];
     [renderEncoder setRenderPipelineState:self.pipelineState];
     
-    [self.scene updateWithDeltaTime:self.timer];
+    CFAbsoluteTime currentTime = CFAbsoluteTimeGetCurrent();
+    CFAbsoluteTime deltaTime = currentTime - self.lastTime;
+    self.lastTime = currentTime;
+    [self.scene updateWithDeltaTime:deltaTime];
     self->_uniforms.viewMatrix = self.scene.camera.viewMatrix;
     self->_uniforms.projectionMatrix = self.scene.camera.projectionMatrix;
     

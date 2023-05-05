@@ -11,6 +11,9 @@
 #import <AppKit/AppKit.h>
 #endif
 
+@interface InputController ()
+@end
+
 @implementation InputController
 
 + (InputController *)sharedInstance {
@@ -27,6 +30,11 @@
         [NSNotificationCenter.defaultCenter addObserver:self
                                                selector:@selector(didReceiveKeyboardDidConnectNotification:)
                                                    name:GCKeyboardDidConnectNotification
+                                                 object:nil];
+        
+        [NSNotificationCenter.defaultCenter addObserver:self
+                                               selector:@selector(didReceiveMouseDidConnectNotification:)
+                                                   name:GCMouseDidConnectNotification
                                                  object:nil];
         
 #if TARGET_OS_MACCATALYST
@@ -51,6 +59,26 @@
         } else {
             [keysPressed removeObject:[NSNumber numberWithLong:keyCode]];
         }
+    };
+}
+
+- (void)didReceiveMouseDidConnectNotification:(NSNotification *)notification {
+    GCMouse *mouse = notification.object;
+    
+    BOOL *leftMouseDown = &self->_leftMouseDown;
+    mouse.mouseInput.leftButton.pressedChangedHandler = ^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed) {
+        *leftMouseDown = pressed;
+    };
+    
+    CGPoint *mouseDelta = &self->_mouseDelta;
+    mouse.mouseInput.mouseMovedHandler = ^(GCMouseInput * _Nonnull mouse, float deltaX, float deltaY) {
+        *mouseDelta = CGPointMake(deltaX, deltaY);
+    };
+    
+    CGPoint *mouseScroll = &self->_mouseScroll;
+    mouse.mouseInput.scroll.valueChangedHandler = ^(GCControllerDirectionPad * _Nonnull dpad, float xValue, float yValue) {
+        (*mouseScroll).x = xValue;
+        (*mouseScroll).y = yValue;
     };
 }
 
