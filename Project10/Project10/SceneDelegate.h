@@ -1,0 +1,12 @@
+//
+//  SceneDelegate.h
+//  Project10
+//
+//  Created by Jinwoo Kim on 5/7/23.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+@property (strong, nonatomic) UIWindow * window;
+@end
