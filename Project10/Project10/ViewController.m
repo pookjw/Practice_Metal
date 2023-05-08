@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 @property (strong) GameController *gameController;
-@property (assign) CGSize previousTranslation;
+@property (assign) CGPoint previousTranslation;
 @property (assign) CGFloat previousScroll;
 @end
 
@@ -20,7 +20,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.previousTranslation = CGSizeZero;
+        self.previousTranslation = CGPointZero;
         self.previousScroll = 1.f;
     }
     
@@ -32,6 +32,8 @@
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didTriggerPanGesture:)];
     [mtkView addGestureRecognizer:panGesture];
     
+    // TODO: UIPinchGestureRecognizer
+    
     GameController *gameController = [[GameController alloc] initWithMTKView:mtkView];
     
     self.view = mtkView;
@@ -39,7 +41,25 @@
 }
 
 - (void)didTriggerPanGesture:(UIPanGestureRecognizer *)sender {
-    // TODO
+    switch (sender.state) {
+        case UIGestureRecognizerStateChanged:
+            InputController.sharedInstance.touchLocation = [sender locationInView:sender.view];
+            
+            CGPoint translation = [sender translationInView:sender.view];
+            
+            InputController.sharedInstance.touchDelta = CGSizeMake(
+                                                                   translation.x - self.previousTranslation.x,
+                                                                   translation.y - self.previousTranslation.y
+                                                                   );
+            
+            self.previousTranslation = translation;
+            break;
+        case UIGestureRecognizerStateEnded:
+            self.previousTranslation = CGPointZero;
+            break;
+        default:
+            break;
+    }
 }
 
 @end

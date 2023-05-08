@@ -52,11 +52,11 @@
 - (void)setTouchDelta:(CGSize)touchDelta {
     touchDelta.height *= -1.f;
     
-    if ((touchDelta.width != 0.f) && (touchDelta.height != 0.f)) {
+    if (CGSizeEqualToSize(touchDelta, CGSizeZero)) {
+        self->_leftMouseDown = NO;
+    } else {
         self.mouseDelta = CGPointMake(touchDelta.width, touchDelta.height);
         self->_leftMouseDown = YES;
-    } else {
-        self->_leftMouseDown = NO;
     }
     
     self->_touchDelta = touchDelta;
