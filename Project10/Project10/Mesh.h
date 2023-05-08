@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, strong) NSArray<Submesh *> *submeshes;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithMDLMesh:(MDLMesh *)mdlMesh mtkMesh:(MTKMesh *)mtkMesh;
+- (instancetype)initWithMDLMesh:(MDLMesh *)mdlMesh mtkMesh:(MTKMesh *)mtkMesh device:(id<MTLDevice>)device;
 @end
 
 NS_ASSUME_NONNULL_END

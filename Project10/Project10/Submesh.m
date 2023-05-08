@@ -21,7 +21,10 @@
 - (id<MTLTexture> _Nullable)propertyWithMaterial:(MDLMaterial *)material semantic:(MDLMaterialSemantic)semantic device:(id<MTLDevice>)device {
     MDLMaterialProperty *property = [material propertyWithSemantic:semantic];
     assert(property);
-    assert(property.type == MDLMaterialPropertyTypeString);
+    
+    if (property.type != MDLMaterialPropertyTypeString) {
+        return nil;
+    }
     
     NSString *filename = property.stringValue;
     id<MTLTexture> texture = [TextureController textureFromFilename:filename device:device];

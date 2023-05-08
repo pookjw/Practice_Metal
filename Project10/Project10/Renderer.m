@@ -15,7 +15,6 @@
 }
 @property (strong) MTKView *mtkView;
 
-@property (strong) id<MTLDevice> device;
 @property (strong) id<MTLCommandQueue> commandQueue;
 @property (strong) id<MTLLibrary> library;
 @property (strong) id<MTLRenderPipelineState> pipelineState;
@@ -54,7 +53,7 @@
         mtkView.clearColor = MTLClearColorMake(0.93f, 0.97f, 1.f, 1.f);
         mtkView.depthStencilPixelFormat = MTLPixelFormatDepth32Float;
         
-        self.device = device;
+        self->_device = device;
         self.commandQueue = commandQueue;
         self.library = library;
         self.pipelineState = pipelineState;
@@ -68,6 +67,31 @@
     
 }
 
-// TODO
+- (void)drawInScene:(GameScene *)scene view:(MTKView *)view {
+    id<MTLCommandBuffer> commandBuffer = self.commandQueue.commandBuffer;
+    MTLRenderPassDescriptor *descriptor = view.currentRenderPassDescriptor;
+    id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:descriptor];
+    assert(renderEncoder);
+    
+    [self updateUniformsWithScene:scene];
+    
+    [renderEncoder setDepthStencilState:self.depthStencilState];
+    [renderEncoder setRenderPipelineState:self.pipelineState];
+    
+    [scene.models enumerateObjectsUsingBlock:^(Model * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj renderInEncoder:renderEncoder uniforms:self->uniforms params:self->params];
+    }];
+    
+    [renderEncoder endEncoding];
+    
+    id<CAMetalDrawable> drawable = view.currentDrawable;
+    [commandBuffer presentDrawable:drawable];
+    [commandBuffer commit];
+}
+
+- (void)updateUniformsWithScene:(GameScene *)scene {
+    self->uniforms.viewMatrix = scene.camera.viewMatrix;
+    self->uniforms.projectionMatrix = scene.camera.projectionMatrix;
+}
 
 @end

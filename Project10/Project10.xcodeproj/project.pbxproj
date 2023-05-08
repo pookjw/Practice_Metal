@@ -20,6 +20,22 @@
 		4F936E462A0800A60095929D /* Submesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E452A0800A60095929D /* Submesh.m */; };
 		4F936E492A0801DC0095929D /* TextureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E482A0801DC0095929D /* TextureController.m */; };
 		4F936E4C2A0808B00095929D /* Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E4B2A0808B00095929D /* Mesh.m */; };
+		4F936E4F2A0938610095929D /* Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E4E2A0938610095929D /* Transform.m */; };
+		4F936E522A09387A0095929D /* MathLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E512A09387A0095929D /* MathLibrary.m */; };
+		4F936E542A0938890095929D /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E532A0938890095929D /* Textures.xcassets */; };
+		4F936E572A0938B40095929D /* Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E562A0938B40095929D /* Movement.m */; };
+		4F936E5A2A0938C80095929D /* InputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E592A0938C80095929D /* InputController.m */; };
+		4F936E622A0939100095929D /* ArcballCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E5D2A0939100095929D /* ArcballCamera.m */; };
+		4F936E632A0939100095929D /* FPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E5F2A0939100095929D /* FPCamera.m */; };
+		4F936E642A0939100095929D /* OrthographicCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E612A0939100095929D /* OrthographicCamera.m */; };
+		4F936E672A09392A0095929D /* PlayerCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E652A09392A0095929D /* PlayerCamera.m */; };
+		4F936E6A2A0939460095929D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E692A0939460095929D /* Settings.m */; };
+		4F936E6D2A093A0B0095929D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E6C2A093A0B0095929D /* GameScene.m */; };
+		4F936E702A093A530095929D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E6F2A093A530095929D /* Model.m */; };
+		4F936E732A0945B50095929D /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E722A0945B50095929D /* GameController.m */; };
+		4F936E7A2A094A740095929D /* gizmo.usd in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E762A094A740095929D /* gizmo.usd */; };
+		4F936E7B2A094A740095929D /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E782A094A740095929D /* sphere.obj */; };
+		4F936E7C2A094A740095929D /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E792A094A740095929D /* sphere.mtl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +64,35 @@
 		4F936E482A0801DC0095929D /* TextureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextureController.m; sourceTree = "<group>"; };
 		4F936E4A2A0808B00095929D /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		4F936E4B2A0808B00095929D /* Mesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mesh.m; sourceTree = "<group>"; };
+		4F936E4D2A0938610095929D /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		4F936E4E2A0938610095929D /* Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transform.m; sourceTree = "<group>"; };
+		4F936E502A0938790095929D /* MathLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathLibrary.h; sourceTree = "<group>"; };
+		4F936E512A09387A0095929D /* MathLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathLibrary.m; sourceTree = "<group>"; };
+		4F936E532A0938890095929D /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
+		4F936E552A0938B40095929D /* Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movement.h; sourceTree = "<group>"; };
+		4F936E562A0938B40095929D /* Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movement.m; sourceTree = "<group>"; };
+		4F936E582A0938C80095929D /* InputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputController.h; sourceTree = "<group>"; };
+		4F936E592A0938C80095929D /* InputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputController.m; sourceTree = "<group>"; };
+		4F936E5B2A0938E70095929D /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		4F936E5C2A0939100095929D /* FPCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPCamera.h; sourceTree = "<group>"; };
+		4F936E5D2A0939100095929D /* ArcballCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcballCamera.m; sourceTree = "<group>"; };
+		4F936E5E2A0939100095929D /* ArcballCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcballCamera.h; sourceTree = "<group>"; };
+		4F936E5F2A0939100095929D /* FPCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCamera.m; sourceTree = "<group>"; };
+		4F936E602A0939100095929D /* OrthographicCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrthographicCamera.h; sourceTree = "<group>"; };
+		4F936E612A0939100095929D /* OrthographicCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrthographicCamera.m; sourceTree = "<group>"; };
+		4F936E652A09392A0095929D /* PlayerCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCamera.m; sourceTree = "<group>"; };
+		4F936E662A09392A0095929D /* PlayerCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCamera.h; sourceTree = "<group>"; };
+		4F936E682A0939460095929D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		4F936E692A0939460095929D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		4F936E6B2A093A0B0095929D /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		4F936E6C2A093A0B0095929D /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		4F936E6E2A093A530095929D /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		4F936E6F2A093A530095929D /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		4F936E712A0945B50095929D /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		4F936E722A0945B50095929D /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		4F936E762A094A740095929D /* gizmo.usd */ = {isa = PBXFileReference; lastKnownFileType = file; path = gizmo.usd; sourceTree = "<group>"; };
+		4F936E782A094A740095929D /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		4F936E792A094A740095929D /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,25 +132,78 @@
 				4F936E252A07EE300095929D /* ViewController.h */,
 				4F936E262A07EE300095929D /* ViewController.m */,
 				4F936E2B2A07EE300095929D /* Assets.xcassets */,
+				4F936E532A0938890095929D /* Textures.xcassets */,
 				4F936E2D2A07EE300095929D /* LaunchScreen.storyboard */,
 				4F936E302A07EE300095929D /* Info.plist */,
 				4F936E312A07EE300095929D /* main.m */,
 				4F936E382A07EF430095929D /* Renderer.h */,
 				4F936E392A07EF430095929D /* Renderer.m */,
+				4F936E6B2A093A0B0095929D /* GameScene.h */,
+				4F936E6C2A093A0B0095929D /* GameScene.m */,
+				4F936E712A0945B50095929D /* GameController.h */,
+				4F936E722A0945B50095929D /* GameController.m */,
 				4F936E3B2A07F0E60095929D /* Shaders.metal */,
 				4F936E402A07F1B50095929D /* common.h */,
 				4F936E3D2A07F16B0095929D /* MDLVertexDescriptor+Category.h */,
 				4F936E3E2A07F16B0095929D /* MDLVertexDescriptor+Category.m */,
 				4F936E412A07FE2B0095929D /* MTLVertexDescriptor+Category.h */,
 				4F936E422A07FE2B0095929D /* MTLVertexDescriptor+Category.m */,
+				4F936E6E2A093A530095929D /* Model.h */,
+				4F936E6F2A093A530095929D /* Model.m */,
 				4F936E4A2A0808B00095929D /* Mesh.h */,
 				4F936E4B2A0808B00095929D /* Mesh.m */,
 				4F936E442A0800A60095929D /* Submesh.h */,
 				4F936E452A0800A60095929D /* Submesh.m */,
 				4F936E472A0801DC0095929D /* TextureController.h */,
 				4F936E482A0801DC0095929D /* TextureController.m */,
+				4F936E4D2A0938610095929D /* Transform.h */,
+				4F936E4E2A0938610095929D /* Transform.m */,
+				4F936E552A0938B40095929D /* Movement.h */,
+				4F936E562A0938B40095929D /* Movement.m */,
+				4F936E502A0938790095929D /* MathLibrary.h */,
+				4F936E512A09387A0095929D /* MathLibrary.m */,
+				4F936E582A0938C80095929D /* InputController.h */,
+				4F936E592A0938C80095929D /* InputController.m */,
+				4F936E5B2A0938E70095929D /* Camera.h */,
+				4F936E5E2A0939100095929D /* ArcballCamera.h */,
+				4F936E5D2A0939100095929D /* ArcballCamera.m */,
+				4F936E5C2A0939100095929D /* FPCamera.h */,
+				4F936E5F2A0939100095929D /* FPCamera.m */,
+				4F936E602A0939100095929D /* OrthographicCamera.h */,
+				4F936E612A0939100095929D /* OrthographicCamera.m */,
+				4F936E662A09392A0095929D /* PlayerCamera.h */,
+				4F936E652A09392A0095929D /* PlayerCamera.m */,
+				4F936E682A0939460095929D /* Settings.h */,
+				4F936E692A0939460095929D /* Settings.m */,
+				4F936E742A094A740095929D /* Models */,
 			);
 			path = Project10;
+			sourceTree = "<group>";
+		};
+		4F936E742A094A740095929D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F936E752A094A740095929D /* Gizmo */,
+				4F936E772A094A740095929D /* Sphere */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F936E752A094A740095929D /* Gizmo */ = {
+			isa = PBXGroup;
+			children = (
+				4F936E762A094A740095929D /* gizmo.usd */,
+			);
+			path = Gizmo;
+			sourceTree = "<group>";
+		};
+		4F936E772A094A740095929D /* Sphere */ = {
+			isa = PBXGroup;
+			children = (
+				4F936E782A094A740095929D /* sphere.obj */,
+				4F936E792A094A740095929D /* sphere.mtl */,
+			);
+			path = Sphere;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F936E542A0938890095929D /* Textures.xcassets in Resources */,
+				4F936E7A2A094A740095929D /* gizmo.usd in Resources */,
 				4F936E2F2A07EE300095929D /* LaunchScreen.storyboard in Resources */,
 				4F936E2C2A07EE300095929D /* Assets.xcassets in Resources */,
+				4F936E7C2A094A740095929D /* sphere.mtl in Resources */,
+				4F936E7B2A094A740095929D /* sphere.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,14 +281,26 @@
 			files = (
 				4F936E3C2A07F0E60095929D /* Shaders.metal in Sources */,
 				4F936E272A07EE300095929D /* ViewController.m in Sources */,
+				4F936E6A2A0939460095929D /* Settings.m in Sources */,
 				4F936E4C2A0808B00095929D /* Mesh.m in Sources */,
 				4F936E212A07EE300095929D /* AppDelegate.m in Sources */,
+				4F936E622A0939100095929D /* ArcballCamera.m in Sources */,
 				4F936E322A07EE300095929D /* main.m in Sources */,
+				4F936E672A09392A0095929D /* PlayerCamera.m in Sources */,
 				4F936E432A07FE2B0095929D /* MTLVertexDescriptor+Category.m in Sources */,
+				4F936E632A0939100095929D /* FPCamera.m in Sources */,
+				4F936E6D2A093A0B0095929D /* GameScene.m in Sources */,
+				4F936E702A093A530095929D /* Model.m in Sources */,
+				4F936E642A0939100095929D /* OrthographicCamera.m in Sources */,
+				4F936E4F2A0938610095929D /* Transform.m in Sources */,
 				4F936E3F2A07F16B0095929D /* MDLVertexDescriptor+Category.m in Sources */,
 				4F936E3A2A07EF430095929D /* Renderer.m in Sources */,
 				4F936E242A07EE300095929D /* SceneDelegate.m in Sources */,
+				4F936E522A09387A0095929D /* MathLibrary.m in Sources */,
+				4F936E5A2A0938C80095929D /* InputController.m in Sources */,
 				4F936E462A0800A60095929D /* Submesh.m in Sources */,
+				4F936E732A0945B50095929D /* GameController.m in Sources */,
+				4F936E572A0938B40095929D /* Movement.m in Sources */,
 				4F936E492A0801DC0095929D /* TextureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
