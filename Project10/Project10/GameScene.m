@@ -66,7 +66,7 @@
                                                      up:simd_make_float3(0.f, 1.f, 0.f)];
     
     simd_float3 forwardVector = simd_make_float3(lookAt.columns[0].z, lookAt.columns[1].z, lookAt.columns[2].z);
-    simd_float3 rightVector = simd_make_float3(lookAt.columns[0].z, lookAt.columns[1].x, lookAt.columns[2].x);
+    simd_float3 rightVector = simd_make_float3(lookAt.columns[0].x, lookAt.columns[1].x, lookAt.columns[2].x);
     
     float heightNear = 2.f * tanf(self.camera.fov * 0.5f) * self.camera.near;
     float widthNear = heightNear * self.camera.aspect;
