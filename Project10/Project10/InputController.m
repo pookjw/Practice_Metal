@@ -88,7 +88,7 @@
         *mouseDelta = CGPointMake(deltaX, deltaY);
     };
     
-    CGPoint *mouseScroll = &self->_mouseScroll;
+    CGPoint *mouseScroll = &self->mouseScroll;
     mouse.mouseInput.scroll.valueChangedHandler = ^(GCControllerDirectionPad * _Nonnull dpad, float xValue, float yValue) {
         (*mouseScroll).x = xValue;
         (*mouseScroll).y = yValue;

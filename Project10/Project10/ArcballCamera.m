@@ -67,11 +67,11 @@
 - (void)updateWithDeltaTime:(float)deltaTime {
     InputController *input = InputController.sharedInstance;
     float scrollSensitivity = Settings.mouseScrollSensitivity;
-    self.distance -= (input.mouseScroll.x + input.mouseScroll.y) * scrollSensitivity;
+    self.distance -= (input->mouseScroll.x + input->mouseScroll.y) * scrollSensitivity;
     self.distance = MIN(self.maxDistance, self.distance);
     self.distance = MAX(self.minDistance, self.distance);
     
-    input.mouseScroll = CGPointZero;
+    input->mouseScroll = CGPointZero;
     
     if (input.leftMouseDown) {
         float sensitivity = Settings.moustPanSensitivity;

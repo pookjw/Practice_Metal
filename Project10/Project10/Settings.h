@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, readonly, nonatomic) float translationSpeed;
 @property (class, readonly, nonatomic) float mouseScrollSensitivity;
 @property (class, readonly, nonatomic) float moustPanSensitivity;
+@property (class, readonly, nonatomic) float touchZoomSensitivity;
 @end
 
 NS_ASSUME_NONNULL_END

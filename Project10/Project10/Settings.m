@@ -25,4 +25,8 @@
     return 0.008f;
 }
 
++ (float)touchZoomSensitivity {
+    return 10.f;
+}
+
 @end

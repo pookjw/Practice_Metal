@@ -9,12 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InputController : NSObject
+@interface InputController : NSObject {
+@public CGPoint mouseScroll;
+}
 @property (class, readonly, nonatomic) InputController *sharedInstance;
 @property (strong, readonly) NSMutableSet<NSNumber *> *keysPressed;
 @property (readonly, assign) BOOL leftMouseDown;
 @property (assign) CGPoint mouseDelta;
-@property (assign) CGPoint mouseScroll;
 @property (assign) CGPoint touchLocation;
 @property (assign, nonatomic) CGSize touchDelta;
 + (instancetype)new NS_UNAVAILABLE;

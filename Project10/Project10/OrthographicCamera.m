@@ -64,9 +64,9 @@
     self.transform->_position += transform.position;
     
     InputController *input = InputController.sharedInstance;
-    float zoom = input.mouseScroll.x + input.mouseScroll.y;
+    float zoom = input->mouseScroll.x + input->mouseScroll.y;
     self.viewSize -= zoom;
-    input.mouseScroll = CGPointZero;
+    input->mouseScroll = CGPointZero;
 }
 
 @end
