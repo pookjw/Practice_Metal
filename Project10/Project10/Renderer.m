@@ -78,6 +78,11 @@
     [renderEncoder setDepthStencilState:self.depthStencilState];
     [renderEncoder setRenderPipelineState:self.pipelineState];
     
+    NSUInteger count;
+    Light *lights = [scene.lighting lightsDataWithCount:&count];
+    [renderEncoder setFragmentBytes:lights length:sizeof(Light) * count atIndex:LightBuffer];
+    free(lights);
+    
     [scene.models enumerateObjectsUsingBlock:^(Model * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj renderInEncoder:renderEncoder uniforms:self->uniforms params:self->params];
     }];
@@ -92,6 +97,7 @@
 - (void)updateUniformsWithScene:(GameScene *)scene {
     self->uniforms.viewMatrix = scene.camera.viewMatrix;
     self->uniforms.projectionMatrix = scene.camera.projectionMatrix;
+    self->params.lightCount = (uint)scene.lighting.lights.count;
 }
 
 @end

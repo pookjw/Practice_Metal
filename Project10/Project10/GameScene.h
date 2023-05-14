@@ -8,12 +8,14 @@
 #import <MetalKit/MetalKit.h>
 #import "ArcballCamera.h"
 #import "Model.h"
+#import "SceneLighting.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GameScene : NSObject
 @property (readonly, strong) ArcballCamera *camera;
 @property (readonly, strong) NSArray<Model *> *models;
+@property (readonly, strong) SceneLighting *lighting;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithDevice:(id<MTLDevice>)device;

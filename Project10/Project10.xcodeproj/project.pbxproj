@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4620862A0BE6DE0095D01F /* SceneLighting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4620852A0BE6DE0095D01F /* SceneLighting.m */; };
 		4F936E212A07EE300095929D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E202A07EE300095929D /* AppDelegate.m */; };
 		4F936E242A07EE300095929D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E232A07EE300095929D /* SceneDelegate.m */; };
 		4F936E272A07EE300095929D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E262A07EE300095929D /* ViewController.m */; };
@@ -36,9 +37,12 @@
 		4F936E7A2A094A740095929D /* gizmo.usd in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E762A094A740095929D /* gizmo.usd */; };
 		4F936E7B2A094A740095929D /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E782A094A740095929D /* sphere.obj */; };
 		4F936E7C2A094A740095929D /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4F936E792A094A740095929D /* sphere.mtl */; };
+		4FDD84BB2A0D4520002B7423 /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD84BA2A0D4520002B7423 /* Lighting.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F4620842A0BE6DE0095D01F /* SceneLighting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneLighting.h; sourceTree = "<group>"; };
+		4F4620852A0BE6DE0095D01F /* SceneLighting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneLighting.m; sourceTree = "<group>"; };
 		4F936E1C2A07EE300095929D /* Project10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F936E1F2A07EE300095929D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F936E202A07EE300095929D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		4F936E762A094A740095929D /* gizmo.usd */ = {isa = PBXFileReference; lastKnownFileType = file; path = gizmo.usd; sourceTree = "<group>"; };
 		4F936E782A094A740095929D /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
 		4F936E792A094A740095929D /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
+		4FDD84B92A0D442E002B7423 /* Lighting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		4FDD84BA2A0D4520002B7423 /* Lighting.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,8 @@
 				4F936E712A0945B50095929D /* GameController.h */,
 				4F936E722A0945B50095929D /* GameController.m */,
 				4F936E3B2A07F0E60095929D /* Shaders.metal */,
+				4FDD84BA2A0D4520002B7423 /* Lighting.metal */,
+				4FDD84B92A0D442E002B7423 /* Lighting.h */,
 				4F936E402A07F1B50095929D /* common.h */,
 				4F936E3D2A07F16B0095929D /* MDLVertexDescriptor+Category.h */,
 				4F936E3E2A07F16B0095929D /* MDLVertexDescriptor+Category.m */,
@@ -175,6 +183,8 @@
 				4F936E652A09392A0095929D /* PlayerCamera.m */,
 				4F936E682A0939460095929D /* Settings.h */,
 				4F936E692A0939460095929D /* Settings.m */,
+				4F4620842A0BE6DE0095D01F /* SceneLighting.h */,
+				4F4620852A0BE6DE0095D01F /* SceneLighting.m */,
 				4F936E742A094A740095929D /* Models */,
 			);
 			path = Project10;
@@ -293,7 +303,9 @@
 				4F936E702A093A530095929D /* Model.m in Sources */,
 				4F936E642A0939100095929D /* OrthographicCamera.m in Sources */,
 				4F936E4F2A0938610095929D /* Transform.m in Sources */,
+				4F4620862A0BE6DE0095D01F /* SceneLighting.m in Sources */,
 				4F936E3F2A07F16B0095929D /* MDLVertexDescriptor+Category.m in Sources */,
+				4FDD84BB2A0D4520002B7423 /* Lighting.metal in Sources */,
 				4F936E3A2A07EF430095929D /* Renderer.m in Sources */,
 				4F936E242A07EE300095929D /* SceneDelegate.m in Sources */,
 				4F936E522A09387A0095929D /* MathLibrary.m in Sources */,

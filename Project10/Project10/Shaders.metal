@@ -7,6 +7,7 @@
 
 #include <metal_stdlib>
 #import "common.h"
+#import "Lighting.h"
 using namespace metal;
 
 struct VertexIn {
@@ -20,6 +21,8 @@ struct VertexOut {
     float4 position [[position]];
     float2 uv;
     float3 color;
+    float3 worldPosition;
+    float3 worldNormal;
 };
 
 vertex VertexOut vertex_main(
@@ -28,10 +31,13 @@ vertex VertexOut vertex_main(
                              )
 {
     float4 position = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * in.position;
+    
     VertexOut out {
         .position = position,
         .uv = in.uv,
-        .color = in.color
+        .color = in.color,
+        .worldPosition = (uniforms.modelMatrix * in.position).xyz,
+        .worldNormal = uniforms.normalMatrix * in.normal
     };
     
     return out;
@@ -40,6 +46,7 @@ vertex VertexOut vertex_main(
 fragment float4 fragment_main(
                               const VertexOut in [[stage_in]],
                               constant Params &params [[buffer(ParamsBuffer)]],
+                              constant Light *lights [[buffer(LightBuffer)]],
                               texture2d<float> baseColorTexture [[texture(BaseColor)]]
                               )
 {
@@ -57,5 +64,10 @@ fragment float4 fragment_main(
         baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
     }
     
-    return float4(baseColor, 1.f);
+//    return float4(baseColor, 1.f);
+    
+    float3 normalDirection = normalize(in.worldNormal);
+    float3 color = phongLighting(normalDirection, in.worldPosition, params, lights, baseColor);
+    
+    return float4(color, 1.f);
 }

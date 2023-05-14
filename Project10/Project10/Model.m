@@ -8,6 +8,7 @@
 #import "Model.h"
 #import "Mesh.h"
 #import "MDLVertexDescriptor+Category.h"
+#import "MathLibrary.h"
 
 @interface Model ()
 @property (copy) NSString *name;
@@ -49,6 +50,7 @@
 - (void)renderInEncoder:(id<MTLRenderCommandEncoder>)encoder uniforms:(Uniforms)vertex params:(Params)fragment {
     Uniforms uniforms = vertex;
     uniforms.modelMatrix = self.transform.modelMatrix;
+    uniforms.normalMatrix = [MathLibrary upperLeftFloat3x3FromFloat4x4:uniforms.modelMatrix];
     
     Params params = fragment;
     params.tiling = self.tiling;

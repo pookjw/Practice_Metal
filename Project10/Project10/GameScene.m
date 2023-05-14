@@ -36,6 +36,7 @@
         camera->_transform = defaultView;
         
         self->_camera = camera;
+        self->_lighting = [SceneLighting new];
     }
     
     return self;
