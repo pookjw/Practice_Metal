@@ -8,6 +8,7 @@
 #import "Renderer.h"
 #import "MTLVertexDescriptor+Category.h"
 #import "common.h"
+#import "DebugLights.h"
 
 @interface Renderer () {
     Uniforms uniforms;
@@ -81,11 +82,13 @@
     NSUInteger count;
     Light *lights = [scene.lighting lightsDataWithCount:&count];
     [renderEncoder setFragmentBytes:lights length:sizeof(Light) * count atIndex:LightBuffer];
-    free(lights);
     
     [scene.models enumerateObjectsUsingBlock:^(Model * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj renderInEncoder:renderEncoder uniforms:self->uniforms params:self->params];
     }];
+    
+    [DebugLights drawLights:lights lightCount:count encoder:renderEncoder uniforms:self->uniforms device:self.device library:self.library];
+    free(lights);
     
     [renderEncoder endEncoding];
     

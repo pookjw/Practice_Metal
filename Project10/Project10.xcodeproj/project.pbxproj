@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F4620862A0BE6DE0095D01F /* SceneLighting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4620852A0BE6DE0095D01F /* SceneLighting.m */; };
+		4F6F98B92A13DC3B00EB5DB3 /* DebugLights.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F98B82A13DC3B00EB5DB3 /* DebugLights.m */; };
+		4F6F98BB2A13EAA200EB5DB3 /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F98BA2A13EAA200EB5DB3 /* DebugLights.metal */; };
 		4F936E212A07EE300095929D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E202A07EE300095929D /* AppDelegate.m */; };
 		4F936E242A07EE300095929D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E232A07EE300095929D /* SceneDelegate.m */; };
 		4F936E272A07EE300095929D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F936E262A07EE300095929D /* ViewController.m */; };
@@ -43,6 +45,9 @@
 /* Begin PBXFileReference section */
 		4F4620842A0BE6DE0095D01F /* SceneLighting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneLighting.h; sourceTree = "<group>"; };
 		4F4620852A0BE6DE0095D01F /* SceneLighting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneLighting.m; sourceTree = "<group>"; };
+		4F6F98B72A13DC3B00EB5DB3 /* DebugLights.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugLights.h; sourceTree = "<group>"; };
+		4F6F98B82A13DC3B00EB5DB3 /* DebugLights.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugLights.m; sourceTree = "<group>"; };
+		4F6F98BA2A13EAA200EB5DB3 /* DebugLights.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DebugLights.metal; sourceTree = "<group>"; };
 		4F936E1C2A07EE300095929D /* Project10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F936E1F2A07EE300095929D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F936E202A07EE300095929D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F6F98B62A13DC2D00EB5DB3 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				4F6F98B72A13DC3B00EB5DB3 /* DebugLights.h */,
+				4F6F98B82A13DC3B00EB5DB3 /* DebugLights.m */,
+				4F6F98BA2A13EAA200EB5DB3 /* DebugLights.metal */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		4F936E132A07EE300095929D = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +200,7 @@
 				4F936E692A0939460095929D /* Settings.m */,
 				4F4620842A0BE6DE0095D01F /* SceneLighting.h */,
 				4F4620852A0BE6DE0095D01F /* SceneLighting.m */,
+				4F6F98B62A13DC2D00EB5DB3 /* Debug */,
 				4F936E742A094A740095929D /* Models */,
 			);
 			path = Project10;
@@ -301,6 +317,8 @@
 				4F936E632A0939100095929D /* FPCamera.m in Sources */,
 				4F936E6D2A093A0B0095929D /* GameScene.m in Sources */,
 				4F936E702A093A530095929D /* Model.m in Sources */,
+				4F6F98B92A13DC3B00EB5DB3 /* DebugLights.m in Sources */,
+				4F6F98BB2A13EAA200EB5DB3 /* DebugLights.metal in Sources */,
 				4F936E642A0939100095929D /* OrthographicCamera.m in Sources */,
 				4F936E4F2A0938610095929D /* Transform.m in Sources */,
 				4F4620862A0BE6DE0095D01F /* SceneLighting.m in Sources */,
