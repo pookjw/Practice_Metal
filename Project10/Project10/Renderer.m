@@ -87,8 +87,10 @@
         [obj renderInEncoder:renderEncoder uniforms:self->uniforms params:self->params];
     }];
     
+    // DEBUG
     [DebugLights drawLights:lights lightCount:count encoder:renderEncoder uniforms:self->uniforms device:self.device library:self.library];
     free(lights);
+    // END
     
     [renderEncoder endEncoding];
     
@@ -101,6 +103,7 @@
     self->uniforms.viewMatrix = scene.camera.viewMatrix;
     self->uniforms.projectionMatrix = scene.camera.projectionMatrix;
     self->params.lightCount = (uint)scene.lighting.lights.count;
+    self->params.cameraPosition = scene.camera.transform.position;
 }
 
 @end

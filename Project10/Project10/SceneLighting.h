@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SceneLighting : NSObject
 @property (class, readonly, nonatomic) Light sunlight;
+@property (class, readonly, nonatomic) Light ambientLight;
 @property (strong, readonly) NSMutableArray<NSValue *> *lights;
 + (Light)buildDefaultLight;
 - (Light *)lightsDataWithCount:(NSUInteger * _Nullable)count; // have to free()

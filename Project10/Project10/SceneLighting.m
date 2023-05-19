@@ -27,6 +27,13 @@
     return light;
 }
 
++ (Light)ambientLight {
+    Light ambientLight = [self buildDefaultLight];
+    ambientLight.color = simd_make_float3(0.05f, 0.1f, 0.f);
+    ambientLight.type = Ambient;
+    return ambientLight;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self->_lights = [NSMutableArray new];
@@ -34,7 +41,15 @@
         Light sunlight = SceneLighting.sunlight;
         Light *heap_sunlight = malloc(sizeof(Light));
         memcpy(heap_sunlight, &sunlight, sizeof(Light));
-        [self.lights addObject:[NSValue valueWithPointer:heap_sunlight]];
+        
+        Light ambientLight = SceneLighting.ambientLight;
+        Light *heap_ambientLight = malloc(sizeof(Light));
+        memcpy(heap_ambientLight, &ambientLight, sizeof(Light));
+        
+        [self.lights addObjectsFromArray:@[
+            [NSValue valueWithPointer:heap_sunlight],
+            [NSValue valueWithPointer:heap_ambientLight]
+        ]];
     }
     
     return self;
