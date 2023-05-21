@@ -54,7 +54,7 @@
                 [self debugDrawPointWithEncoder:encoder uniforms:uniforms position:light.position color:light.color device:device library:library];
                 break;
             case Spot:
-                [self debugDrawPointWithEncoder:encoder uniforms:uniforms position:light.position color:light.color device:device library:library];
+                [self debugDrawPointWithEncoder:encoder uniforms:uniforms position:light.position color:simd_make_float3(0.f, 0.f, 1.f) device:device library:library];
                 [self debugDrawLineWithEncoder:encoder uniforms:uniforms position:light.position direction:light.coneDirection color:light.color device:device library:library];
                 break;
             case Sun:
@@ -122,8 +122,8 @@
     [encoder drawPrimitives:MTLPrimitiveTypeLine vertexStart:0 vertexCount:sizeof(vertices) / sizeof(simd_float3)];
     
     // render starting point
-    [encoder setRenderPipelineState:[self pointPipelineStateWithDevice:device library:library]];
-    [encoder drawPrimitives:MTLPrimitiveTypePoint vertexStart:0 vertexCount:1];
+//    [encoder setRenderPipelineState:[self pointPipelineStateWithDevice:device library:library]];
+//    [encoder drawPrimitives:MTLPrimitiveTypePoint vertexStart:0 vertexCount:1];
 }
 
 @end

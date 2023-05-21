@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, readonly, nonatomic) Light sunlight;
 @property (class, readonly, nonatomic) Light ambientLight;
 @property (class, readonly, nonatomic) Light redLight;
+@property (class, readonly, nonatomic) Light spotLight;
 @property (strong, readonly) NSMutableArray<NSValue *> *lights;
 + (Light)buildDefaultLight;
 - (Light *)lightsDataWithCount:(NSUInteger * _Nullable)count; // have to free()

@@ -6,6 +6,7 @@
 //
 
 #import "SceneLighting.h"
+#import "MathLibrary.h"
 
 @implementation SceneLighting
 
@@ -43,6 +44,18 @@
     return redLight;
 }
 
++ (Light)spotLight {
+    Light spotLight = [self buildDefaultLight];
+    spotLight.type = Spot;
+    spotLight.position = simd_make_float3(-0.64f, 0.64f, -1.07f);
+    spotLight.color = simd_make_float3(1.f, 0.f, 1.f);
+    spotLight.attenutation = simd_make_float3(1.f, 0.5f, 0.f);
+    spotLight.coneAngle = [MathLibrary radiansFromDegrees:40.f];
+    spotLight.coneDirection = simd_make_float3(0.5f, -0.7f, 1.f);
+    spotLight.coneAttenuation = 8.f;
+    return spotLight;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self->_lights = [NSMutableArray new];
@@ -59,10 +72,15 @@
         Light *heap_redLight = malloc(sizeof(Light));
         memcpy(heap_redLight, &redLight, sizeof(Light));
         
+        Light spotLight = SceneLighting.spotLight;
+        Light *heap_spotLight = malloc(sizeof(Light));
+        memcpy(heap_spotLight, &spotLight, sizeof(Light));
+        
         [self.lights addObjectsFromArray:@[
             [NSValue valueWithPointer:heap_sunlight],
             [NSValue valueWithPointer:heap_ambientLight],
-            [NSValue valueWithPointer:heap_redLight]
+            [NSValue valueWithPointer:heap_redLight],
+            [NSValue valueWithPointer:heap_spotLight]
         ]];
     }
     
