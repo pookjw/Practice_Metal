@@ -34,6 +34,15 @@
     return ambientLight;
 }
 
++ (Light)redLight {
+    Light redLight = [self buildDefaultLight];
+    redLight.type = _Point;
+    redLight.position = simd_make_float3(-0.8f, 0.76f, -0.18f);
+    redLight.color = simd_make_float3(1.f, 0.f, 0.f);
+    redLight.attenutation = simd_make_float3(0.5f, 2.f, 1.f);
+    return redLight;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self->_lights = [NSMutableArray new];
@@ -46,9 +55,14 @@
         Light *heap_ambientLight = malloc(sizeof(Light));
         memcpy(heap_ambientLight, &ambientLight, sizeof(Light));
         
+        Light redLight = SceneLighting.redLight;
+        Light *heap_redLight = malloc(sizeof(Light));
+        memcpy(heap_redLight, &redLight, sizeof(Light));
+        
         [self.lights addObjectsFromArray:@[
             [NSValue valueWithPointer:heap_sunlight],
-            [NSValue valueWithPointer:heap_ambientLight]
+            [NSValue valueWithPointer:heap_ambientLight],
+            [NSValue valueWithPointer:heap_redLight]
         ]];
     }
     
