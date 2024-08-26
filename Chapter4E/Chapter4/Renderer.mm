@@ -7,6 +7,7 @@
 
 #import "Renderer.h"
 #import "Quad.h"
+#import "MTLVertexDescriptor+DefaultLayout.h"
 
 @interface Renderer () <MTKViewDelegate>
 @property (retain, nonatomic, nullable) id<MTLDevice> device;
@@ -43,6 +44,7 @@
         piplineDescriptor.fragmentFunction = fragmentFunction;
         [fragmentFunction release];
         piplineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat;
+        piplineDescriptor.vertexDescriptor = [MTLVertexDescriptor defaultLayout];
         
         NSError * _Nullable error = nil;
         id<MTLRenderPipelineState> pipelineState = [device newRenderPipelineStateWithDescriptor:piplineDescriptor error:&error];
@@ -95,7 +97,9 @@
     [renderEncoder setRenderPipelineState:self.pipelineState];
     
     [renderEncoder setVertexBuffer:self.quad.vertexBuffer offset:0 atIndex:0];
-    [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:self.quad.vertices.size()];
+    [renderEncoder setVertexBuffer:self.quad.colorBuffer offset:0 atIndex:1];
+    
+    [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypePoint indexCount:self.quad.indices.size() indexType:MTLIndexTypeUInt16 indexBuffer:self.quad.indexBuffer indexBufferOffset:0];
     
     [renderEncoder endEncoding];
     [commandBuffer presentDrawable:view.currentDrawable];

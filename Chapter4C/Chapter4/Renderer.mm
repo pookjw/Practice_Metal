@@ -6,14 +6,12 @@
 //
 
 #import "Renderer.h"
-#import "Quad.h"
 
 @interface Renderer () <MTKViewDelegate>
 @property (retain, nonatomic, nullable) id<MTLDevice> device;
 @property (retain, nonatomic, nullable) id<MTLCommandQueue> commandQueue;
 @property (retain, nonatomic, nullable) id<MTLLibrary> library;
 @property (retain, nonatomic, nullable) id<MTLRenderPipelineState> pipelineState;
-@property (retain, nonatomic, nullable) Quad *quad;
 @property (assign, nonatomic) float timer;
 @end
 
@@ -29,7 +27,7 @@
         metalView.delegate = self;
         metalView.device = device;
         metalView.depthStencilPixelFormat = MTLPixelFormatInvalid;
-        metalView.clearColor = MTLClearColorMake(1.0, 1.0, 0.8, 1.0);
+        metalView.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 1.0);
         
         //
         
@@ -51,21 +49,15 @@
         
         //
         
-        Quad *quad = [[Quad alloc] initWithDevice:device scale:0.8f];
-        
-        //
-        
         self.device = device;
         self.commandQueue = commandQueue;
         self.library = library;
         self.pipelineState = pipelineState;
-        self.quad = quad;
         
         [device release];
         [commandQueue release];
         [library release];
         [pipelineState release];
-        [quad release];
     }
     
     return self;
@@ -92,10 +84,12 @@
     float currentTime = sin(_timer);
     [renderEncoder setVertexBytes:&currentTime length:sizeof(float) atIndex:11];
     
+    std::uint16_t count = 100;
+    [renderEncoder setVertexBytes:&count length:sizeof(std::uint16_t) atIndex:0];
+    
     [renderEncoder setRenderPipelineState:self.pipelineState];
     
-    [renderEncoder setVertexBuffer:self.quad.vertexBuffer offset:0 atIndex:0];
-    [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:self.quad.vertices.size()];
+    [renderEncoder drawPrimitives:MTLPrimitiveTypePoint vertexStart:0 vertexCount:count];
     
     [renderEncoder endEncoding];
     [commandBuffer presentDrawable:view.currentDrawable];
