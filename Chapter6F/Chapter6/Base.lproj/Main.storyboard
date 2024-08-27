@@ -23,10 +23,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NfC-yF-yJ0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="60w-W5-MQS"/>
-                            <constraint firstItem="NfC-yF-yJ0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PZx-3Z-BPg"/>
-                            <constraint firstAttribute="trailing" secondItem="NfC-yF-yJ0" secondAttribute="trailing" id="ZJX-s7-9sZ"/>
-                            <constraint firstAttribute="bottom" secondItem="NfC-yF-yJ0" secondAttribute="bottom" id="x1B-Db-95a"/>
+                            <constraint firstItem="NfC-yF-yJ0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="931-SG-yHr"/>
+                            <constraint firstItem="NfC-yF-yJ0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Epv-hZ-p1Z"/>
+                            <constraint firstAttribute="bottom" secondItem="NfC-yF-yJ0" secondAttribute="bottom" id="eRv-O6-gv0"/>
+                            <constraint firstItem="NfC-yF-yJ0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wDe-tV-BTy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="-27"/>
+            <point key="canvasLocation" x="-45" y="-21"/>
         </scene>
     </scenes>
     <resources>

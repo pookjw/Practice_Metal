@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23090" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23090" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfd-dk-sLY">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23079"/>
@@ -9,33 +9,42 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="dmR-xv-q8t">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="wfd-dk-sLY" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xnr-Op-8mM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="Zo8-QS-tMx">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-D5-poE">
+                                <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fCi-D5-poE" secondAttribute="height" id="e7q-FQ-pc6"/>
+                                </constraints>
                             </mtkView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Eg7-Kn-jFy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zo8-QS-tMx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Otp-tE-gGK"/>
-                            <constraint firstAttribute="bottom" secondItem="Zo8-QS-tMx" secondAttribute="bottom" id="qEW-63-dqb"/>
-                            <constraint firstAttribute="trailing" secondItem="Zo8-QS-tMx" secondAttribute="trailing" id="rKO-Ey-oHg"/>
-                            <constraint firstItem="Zo8-QS-tMx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v20-fN-gJH"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="trailing" secondItem="xnr-Op-8mM" secondAttribute="trailing" priority="750" id="6e4-nW-L42"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fCi-D5-poE" secondAttribute="trailing" id="GlT-K1-czf"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="centerY" secondItem="xnr-Op-8mM" secondAttribute="centerY" id="Hfq-fp-mVP"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fCi-D5-poE" secondAttribute="bottom" id="MKs-M9-zSK"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="leading" secondItem="xnr-Op-8mM" secondAttribute="leading" priority="750" id="MWr-cF-duT"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="top" secondItem="xnr-Op-8mM" secondAttribute="top" priority="750" id="eYZ-zL-Epj"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="centerX" secondItem="xnr-Op-8mM" secondAttribute="centerX" id="gNk-YX-TDt"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xnr-Op-8mM" secondAttribute="leading" id="h2i-uV-iRN"/>
+                            <constraint firstItem="fCi-D5-poE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xnr-Op-8mM" secondAttribute="top" id="wxU-Es-0ib"/>
+                            <constraint firstAttribute="bottom" secondItem="fCi-D5-poE" secondAttribute="bottom" priority="750" id="zzf-RL-SYG"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mtkView" destination="Zo8-QS-tMx" id="oDv-bL-jYX"/>
+                        <outlet property="mtkView" destination="fCi-D5-poE" id="Zru-nd-6sk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBo-br-98t" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="-27"/>
+            <point key="canvasLocation" x="-42" y="-27"/>
         </scene>
     </scenes>
     <resources>
