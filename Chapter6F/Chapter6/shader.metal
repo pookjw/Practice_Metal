@@ -6,6 +6,7 @@
 //
 
 #include <metal_stdlib>
+#import "Common.h"
 using namespace metal;
 
 struct VertexIn {
@@ -16,8 +17,9 @@ struct VertexOut {
     float4 position [[position]];
 };
 
-vertex VertexOut vertex_main(VertexIn in [[stage_in]]) {
-    float4 position = in.position;
+vertex VertexOut vertex_main(VertexIn in [[stage_in]],
+                             constant Uniforms &uniforms [[buffer(11)]]) {
+    float4 position = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * in.position;
     
     VertexOut out = {
         .position = position

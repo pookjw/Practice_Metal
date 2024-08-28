@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23090" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23079"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yjk-Ui-Iix">
+                                <rect key="frame" x="0.0" y="787" width="393" height="32"/>
+                                <segments>
+                                    <segment title="Train"/>
+                                    <segment title="Quad"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeSegmentedControlValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="clJ-1X-zEe"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYq-Fl-hM4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="728"/>
+                                <subviews>
+                                    <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="19Z-gG-iRg">
+                                        <rect key="frame" x="0.0" y="167.66666666666663" width="393" height="393"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="19Z-gG-iRg" secondAttribute="height" id="Bpw-PE-KWX"/>
+                                        </constraints>
+                                    </mtkView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="19Z-gG-iRg" secondAttribute="bottom" id="DMx-Qg-bl8"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="19Z-gG-iRg" secondAttribute="trailing" id="cDw-jb-yr0"/>
+                                    <constraint firstItem="19Z-gG-iRg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EYq-Fl-hM4" secondAttribute="leading" id="d0K-CU-10f"/>
+                                    <constraint firstItem="19Z-gG-iRg" firstAttribute="centerX" secondItem="EYq-Fl-hM4" secondAttribute="centerX" id="kSI-4f-a1q"/>
+                                    <constraint firstItem="19Z-gG-iRg" firstAttribute="leading" secondItem="EYq-Fl-hM4" secondAttribute="leading" priority="1" id="mPQ-p0-ph9"/>
+                                    <constraint firstItem="19Z-gG-iRg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EYq-Fl-hM4" secondAttribute="top" id="mir-DY-SCC"/>
+                                    <constraint firstAttribute="trailing" secondItem="19Z-gG-iRg" secondAttribute="trailing" priority="1" id="xRY-7b-MAi"/>
+                                    <constraint firstItem="19Z-gG-iRg" firstAttribute="centerY" secondItem="EYq-Fl-hM4" secondAttribute="centerY" id="zk4-CQ-fHF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yjk-Ui-Iix" secondAttribute="trailing" id="0Od-6g-aFI"/>
+                            <constraint firstItem="Yjk-Ui-Iix" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DE0-Lw-6v2"/>
+                            <constraint firstItem="Yjk-Ui-Iix" firstAttribute="top" secondItem="EYq-Fl-hM4" secondAttribute="bottom" id="Euc-DG-W84"/>
+                            <constraint firstItem="EYq-Fl-hM4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N9K-qz-A4i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYq-Fl-hM4" secondAttribute="trailing" id="Ukz-X5-vKg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yjk-Ui-Iix" secondAttribute="bottom" id="pX0-H6-cat"/>
+                            <constraint firstItem="EYq-Fl-hM4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uTt-Yj-t9p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="metalView" destination="19Z-gG-iRg" id="TeW-eO-hhH"/>
+                        <outlet property="segmentedControl" destination="Yjk-Ui-Iix" id="LoC-Ms-SUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

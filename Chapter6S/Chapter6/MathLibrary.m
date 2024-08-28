@@ -74,18 +74,18 @@
     return matrix;
 }
 
-+ (simd_float4x4)float4x4FromRotationXYZAngle:(float)angle {
-    simd_float4x4 rotationX = [MathLibrary float4x4FromRotationXAngle:angle];
-    simd_float4x4 rotationY = [MathLibrary float4x4FromRotationYAngle:angle];
-    simd_float4x4 rotationZ = [MathLibrary float4x4FromRotationZAngle:angle];
++ (simd_float4x4)float4x4FromRotationXYZAngle:(simd_float3)angle {
+    simd_float4x4 rotationX = [MathLibrary float4x4FromRotationXAngle:angle.x];
+    simd_float4x4 rotationY = [MathLibrary float4x4FromRotationYAngle:angle.y];
+    simd_float4x4 rotationZ = [MathLibrary float4x4FromRotationZAngle:angle.z];
     
     return simd_mul(simd_mul(rotationX, rotationY), rotationZ);
 }
 
-+ (simd_float4x4)float4x4FromRotationYXZAngle:(float)angle {
-    simd_float4x4 rotationX = [MathLibrary float4x4FromRotationXAngle:angle];
-    simd_float4x4 rotationY = [MathLibrary float4x4FromRotationYAngle:angle];
-    simd_float4x4 rotationZ = [MathLibrary float4x4FromRotationZAngle:angle];
++ (simd_float4x4)float4x4FromRotationYXZAngle:(simd_float3)angle {
+    simd_float4x4 rotationX = [MathLibrary float4x4FromRotationXAngle:angle.x];
+    simd_float4x4 rotationY = [MathLibrary float4x4FromRotationYAngle:angle.y];
+    simd_float4x4 rotationZ = [MathLibrary float4x4FromRotationZAngle:angle.z];
     
     return simd_mul(simd_mul(rotationY, rotationX), rotationZ);
 }

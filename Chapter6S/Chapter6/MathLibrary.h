@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (simd_float4x4)float4x4FromRotationXAngle:(float)angle;
 + (simd_float4x4)float4x4FromRotationYAngle:(float)angle;
 + (simd_float4x4)float4x4FromRotationZAngle:(float)angle;
-+ (simd_float4x4)float4x4FromRotationXYZAngle:(float)angle;
-+ (simd_float4x4)float4x4FromRotationYXZAngle:(float)angle;
++ (simd_float4x4)float4x4FromRotationXYZAngle:(simd_float3)angle;
++ (simd_float4x4)float4x4FromRotationYXZAngle:(simd_float3)angle;
 
 + (simd_float3x3)upperLeftFloat3x3FromFloat4x4:(simd_float4x4)matrix;
 
