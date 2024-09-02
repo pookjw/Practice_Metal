@@ -40,7 +40,7 @@
         id<MTLLibrary> library = [device newDefaultLibrary];
         id<MTLFunction> modelVertexFunction = [library newFunctionWithName:@"vertex_main"];
         id<MTLFunction> quadVertexFunction = [library newFunctionWithName:@"vertex_quad"];
-        id<MTLFunction> fragmentFunction = [library newFunctionWithName:@"fragment_gradient_2_main"];
+        id<MTLFunction> fragmentFunction = [library newFunctionWithName:@"fragment_gradient_1_main"];
         [library release];
         
         //

@@ -24,7 +24,8 @@
     switch (primitive) {
         case PrimitivePlane:
             mdlMesh = [[MDLMesh alloc] initPlaneWithExtent:simd_make_float3(1.f, 1.f, 1.f)
-                                                  segments:simd_make_uint2(4, 4)
+//                                                  segments:simd_make_uint2(4, 4)
+                                                  segments:simd_make_uint2(1, 1)
                                               geometryType:MDLGeometryTypeTriangles
                                                  allocator:allocator];
             break;
