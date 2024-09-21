@@ -6,16 +6,31 @@
 //
 
 #import "ViewController.h"
+#import "Renderer.h"
 
 @interface ViewController ()
-
+@property (retain, nonatomic, nullable) Renderer *renderer;
 @end
 
 @implementation ViewController
 
+- (void)dealloc {
+    [_renderer release];
+    [super dealloc];
+}
+
+- (void)loadView {
+    MTKView *mtkView = [MTKView new];
+    self.view = mtkView;
+    [mtkView release];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.systemOrangeColor;
+    
+    Renderer *renderer = [[Renderer alloc] initWithMetalView:(MTKView *)self.view];
+    self.renderer = renderer;
+    [renderer release];
 }
 
 

@@ -12,9 +12,14 @@
 
 - (instancetype)initWithMaterial:(MDLMaterial *)material device:(id<MTLDevice>)device {
     if (self = [super init]) {
-        MDLMaterialProperty *property = [material propertyWithSemantic:MDLMaterialSemanticBaseColor];
-        assert(property != nil);
-        assert(property.type == MDLMaterialPropertyTypeTexture);
+        MDLMaterialProperty * _Nullable property = [material propertyWithSemantic:MDLMaterialSemanticBaseColor];
+        if (property == nil) {
+            return self;
+        }
+        
+        if (property.type != MDLMaterialPropertyTypeTexture) {
+            return self;
+        }
         
         MDLTexture *mdlTexture = property.textureSamplerValue.texture;
         

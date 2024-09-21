@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readonly) MTLIndexType indexType;
 @property (retain, nonatomic, readonly) id<MTLBuffer> indexBuffer;
 @property (assign, nonatomic, readonly) NSUInteger indexBufferOffset;
-@property (retain, nonatomic, readonly) Textures *textures;
+@property (retain, nonatomic, readonly, nullable) Textures *textures;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithMDLSubmesh:(MDLSubmesh *)mdlSubmesh mtkSubmesh:(MTKSubmesh *)mtkSubmesh device:(id<MTLDevice>)device;

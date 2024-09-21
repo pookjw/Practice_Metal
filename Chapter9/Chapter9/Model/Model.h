@@ -12,12 +12,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, Primitive) {
+    PrimitivePlane,
+    PrimitiveSphere
+};
+
 @interface Model : NSObject
 @property (retain, nonatomic, readonly) Transform *transform;
 @property (assign, nonatomic) uint32_t tiling;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithName:(NSString *)name device:(id<MTLDevice>)device;
+- (instancetype)initWithName:(NSString *)name primitive:(Primitive)primitive device:(id<MTLDevice>)device;
 - (void)setTextureWithName:(NSString *)name type:(TextureIndices)type device:(id<MTLDevice>)device;
 - (void)renderInEncoder:(id<MTLRenderCommandEncoder>)encoder uniforms:(Uniforms)vertex params:(Params)fragment;
 @end

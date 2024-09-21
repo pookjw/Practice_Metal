@@ -13,7 +13,7 @@
     if (self = [super init]) {
         _indexCount = mtkSubmesh.indexCount;
         _indexType = mtkSubmesh.indexType;
-        _indexBuffer = mtkSubmesh.indexBuffer.buffer;
+        _indexBuffer = [mtkSubmesh.indexBuffer.buffer retain];
         _indexBufferOffset = mtkSubmesh.indexBuffer.offset;
         _textures = [[Textures alloc] initWithMaterial:mdlSubmesh.material device:device];
     }

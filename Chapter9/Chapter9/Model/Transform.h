@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Transform : NSObject {
-    simd_float3 _position;
-    simd_float3 _rotation;
-    float _scale;
+@public simd_float3 _position;
+@public simd_float3 _rotation;
+@public float _scale;
 }
 @property (nonatomic, readonly) matrix_float4x4 modelMatrix;
 @end
